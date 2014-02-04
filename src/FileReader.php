@@ -44,11 +44,12 @@ class FileReader
     
     public function echoListOfRandomWords($numberOfWords = 10)
     {
+        $list = array();
         for ($i = 0; $i < $numberOfWords; $i++) {
-            echo $this->getRandowWord();
-            kuk()
-            echo "\n";
+            $list[] = $this->getRandowWord();
         }
+        sort($list);
+        echo implode("\n",$list);
     }
     
     public function getRandowWord()
