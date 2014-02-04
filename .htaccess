@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteBase /podcastFeed
+    # Do not enable rewriting for files that exist
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Rewrite to index.php/URL
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+## probably needed by curl against SR
+php_value  user_agent 'Void/2.5'
