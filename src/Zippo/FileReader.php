@@ -19,7 +19,7 @@ class FileReader
     public function __construct()
     {
         $this->wordList = array();
-        $fileContent = file(__DIR__.'/langfiles/Swedish.dic');
+        $fileContent = file(__DIR__.'/../langfiles/Swedish.dic');
         foreach ($fileContent as $w) {
             $word = strstr($w, '/', true);
             if (empty($word)) {
